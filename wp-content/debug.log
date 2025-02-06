@@ -2303,3 +2303,37 @@ Error occurred at line 4117 in Function <code>handle_error</code>. Error message
 #17 /workspaces/UX221Assignment1/.wordpress/wp-admin/edit-tags.php(619): WP_List_Table->display()
 #18 {main}</pre>
  for query INSERT INTO `wp_ecp_x_category` (`category_id`, `post_id`, `taxonomy`) VALUES ('1', 29, 'category') made by WP_List_Table->display, WP_Terms_List_Table->display_rows_or_placeholder, WP_Terms_List_Table->_rows, WP_Terms_List_Table->single_row, WP_List_Table->single_row_columns, WP_Terms_List_Table->handle_row_actions, apply_filters('tag_row_actions'), WP_Hook->apply_filters, ecp\WP_Integration->add_ec_edit_link, ecp\WP_Integration->get_enhanced_category_edit_link, ecp\WP_Integration->get_enhanced_category_edit_url, ecp\Enhanced_Category->get_first_or_create_for_category, ecp\Enhanced_Category->add_new_from_category, ecp\Enhanced_Category->_insert_into_ecp_x_category, WP_SQLite_DB->query, WP_SQLite_DB->print_error
+[06-Feb-2025 00:40:12 UTC] PHP Warning:  Undefined variable $parent_theme_name in /workspaces/UX221Lab4/.wordpress/wp-content/mu-plugins/one-click-child-theme/templates/create_child_form.php on line 18
+[06-Feb-2025 00:48:48 UTC] WordPress database error <div style="clear:both">&nbsp;</div>
+<div class="queries" style="clear:both;margin-bottom:2px;border:red dotted thin;">
+<p>MySQL query:</p>
+<p>INSERT INTO `wp_ecp_x_category` (`category_id`, `post_id`, `taxonomy`) VALUES ('5', 91, 'wp_theme')</p>
+<p>Queries made or created this session were:</p>
+<ol>
+<li>Executing: BEGIN | (no parameters)</li>
+<li>Executing: INSERT INTO `wp_ecp_x_category` (`category_id`, `post_id`, `taxonomy`) VALUES (:param0 , 91, :param1 ) | parameters: 5, wp_theme</li>
+<li>Executing: ROLLBACK | (no parameters)</li>
+</ol>
+</div>
+<div style="clear:both;margin-bottom:2px;border:red dotted thin;" class="error_message" style="border-bottom:dotted blue thin;">
+Error occurred at line 4117 in Function <code>handle_error</code>. Error message was: SQLSTATE[HY000]: General error: 1 no such table: wp_ecp_x_category.
+</div>
+<p>Backtrace:</p>
+<pre>#0 /workspaces/UX221Lab4/.wordpress/wp-content/mu-plugins/sqlite-database-integration/wp-includes/sqlite/class-wp-sqlite-db.php(287): WP_SQLite_Translator->get_error_message()
+#1 /workspaces/UX221Lab4/.wordpress/wp-includes/class-wpdb.php(2610): WP_SQLite_DB->query('INSERT INTO `wp...')
+#2 /workspaces/UX221Lab4/.wordpress/wp-includes/class-wpdb.php(2499): wpdb->_insert_replace_helper('wp_ecp_x_catego...', Array, NULL, 'INSERT')
+#3 /workspaces/UX221Lab4/.wordpress/wp-content/plugins/enhanced-category-pages/classes/ecp/Enhanced_Category.php(61): wpdb->insert('wp_ecp_x_catego...', Array)
+#4 /workspaces/UX221Lab4/.wordpress/wp-content/plugins/enhanced-category-pages/classes/ecp/Enhanced_Category.php(47): ecp\Enhanced_Category->_insert_into_ecp_x_category(5, 91, 'wp_theme')
+#5 /workspaces/UX221Lab4/.wordpress/wp-content/plugins/enhanced-category-pages/classes/ecp/WP_Integration.php(248): ecp\Enhanced_Category->add_new_from_category(Object(WP_Term))
+#6 /workspaces/UX221Lab4/.wordpress/wp-includes/class-wp-hook.php(326): ecp\WP_Integration->add_category(5, 5, 'wp_theme')
+#7 /workspaces/UX221Lab4/.wordpress/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#8 /workspaces/UX221Lab4/.wordpress/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#9 /workspaces/UX221Lab4/.wordpress/wp-includes/taxonomy.php(2660): do_action('create_term', 5, 5, 'wp_theme', Array)
+#10 /workspaces/UX221Lab4/.wordpress/wp-includes/taxonomy.php(2844): wp_insert_term('lab4', 'wp_theme')
+#11 /workspaces/UX221Lab4/.wordpress/wp-includes/post.php(5604): wp_set_object_terms(90, Array, 'wp_theme', false)
+#12 /workspaces/UX221Lab4/.wordpress/wp-includes/post.php(4880): wp_set_post_terms(90, Array, 'wp_theme')
+#13 /workspaces/UX221Lab4/.wordpress/wp-includes/class-wp-theme-json-resolver.php(532): wp_insert_post(Array, true)
+#14 /workspaces/UX221Lab4/.wordpress/wp-includes/class-wp-theme-json-resolver.php(691): WP_Theme_JSON_Resolver::get_user_data_from_wp_global_styles(Object(WP_Theme), true)
+#15 /workspaces/UX221Lab4/.wordpress/wp-admin/site-editor.php(83): WP_Theme_JSON_Resolver::get_user_global_styles_post_id()
+#16 {main}</pre>
+ for query INSERT INTO `wp_ecp_x_category` (`category_id`, `post_id`, `taxonomy`) VALUES ('5', 91, 'wp_theme') made by WP_Theme_JSON_Resolver::get_user_global_styles_post_id, WP_Theme_JSON_Resolver::get_user_data_from_wp_global_styles, wp_insert_post, wp_set_post_terms, wp_set_object_terms, wp_insert_term, do_action('create_term'), WP_Hook->do_action, WP_Hook->apply_filters, ecp\WP_Integration->add_category, ecp\Enhanced_Category->add_new_from_category, ecp\Enhanced_Category->_insert_into_ecp_x_category, WP_SQLite_DB->query, WP_SQLite_DB->print_error
